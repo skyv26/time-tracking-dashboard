@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* UserStatSwitch */
+
+.UserAvatar {
+    @apply inline-block size-12 rounded-full;
+}
+
+.ReportFor {
+    @apply flex flex-col gap-2;
+}
+
+.StatSwitch {
+    @apply block;
+}
+
+.UserInfoGroup {
+    @apply flex gap-2;
+}
