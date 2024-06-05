@@ -10,7 +10,7 @@ const ReportFrom = ({
     spanElement.textContent = spanText;
 
     self.insertAdjacentElement('afterbegin', spanElement);
-    self.textContent = userName;
+    self.insertAdjacentText('beforeend', userName);
     self.className = className;
     return self;
 };
