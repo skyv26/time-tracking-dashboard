@@ -16,11 +16,12 @@ UserInfoGroup.insertAdjacentElement('afterbegin', UserAvatar({
 
 UserInfoGroup.insertAdjacentElement('beforeend', ReportFrom({
     userName: 'Aakash Verma',
-    className: ''
+    className: 'ReportFor'
 }))
 
 // Button Container
 const ButtonContainer = document.createElement('div') as HTMLDivElement;
+ButtonContainer.className = 'ButtonContainer';
 
 ButtonContainer.insertAdjacentElement('afterbegin', StatSwitch({
     buttonText: 'Daily',
