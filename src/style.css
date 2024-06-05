@@ -17,6 +17,10 @@
     @apply block;
 }
 
+.ButtonContainer {
+    @apply flex gap-1;
+}
+
 .UserInfoGroup {
     @apply flex gap-2;
 }
