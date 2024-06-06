@@ -24,3 +24,9 @@
 .UserInfoGroup {
     @apply flex gap-2;
 }
+
+/* TimeStat */
+
+.TimeStatHeading {}
+
+.TimeStatHeadingSpan {}
