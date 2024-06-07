@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SectionContainer */
+
+main {
+    
+}
+
+.SectionContainer {
+
+}
 
 /* UserStatSwitch */
 
@@ -27,6 +36,10 @@
 
 /* TimeStat */
 
+.TimeStat {}
+
 .TimeStatHeading {}
 
 .TimeStatHeadingSpan {}
+
+.WorkWithUtility {}
