@@ -1,6 +1,9 @@
 import UserAvatar from "./UserAvatar/UserAvatar";
 import ReportFrom from "./ReportFrom/ReportFrom";
 import StatSwitch from "./StatSwitch/StatSwitch";
+import AakashAvatar from "../../assets/aakash-dashboard-avatar.png";
+import JeremyAvatar from "../../assets/image-jeremy.png";
+
 import '../../style.css';
 
 
@@ -9,7 +12,7 @@ const UserInfoGroup = document.createElement('div') as HTMLDivElement;
 UserInfoGroup.className = 'UserInfoGroup';
 
 UserInfoGroup.insertAdjacentElement('afterbegin', UserAvatar({
-    src: '',
+    src: JeremyAvatar,
     className: 'UserAvatar',
     alt: ''
 }));

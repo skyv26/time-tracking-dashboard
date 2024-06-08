@@ -4,7 +4,7 @@ const StatSwitch = ({
     buttonText: string;
     className: string;
 }) => {
-    const self = document.createElement('button') as HTMLButtonElement;
+    const self = document.createElement('a') as HTMLAnchorElement;
     self.textContent = buttonText;
     self.className = className;
     return self;
