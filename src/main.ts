@@ -40,7 +40,7 @@ function initializeUI() {
     // Safely use the data variable here
     data!.forEach((element) => {
         StatContainer.insertAdjacentElement('beforeend', Stat({
-            className: 'Stat',
+            className: `Stat ${element.title.split(' ').join('-')}`,
             statData: element,
             statType,
         }) as HTMLElement);
