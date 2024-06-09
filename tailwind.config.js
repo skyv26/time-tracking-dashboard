@@ -15,6 +15,11 @@ export default {
         }
       },
     },
+    fontWeight: {
+      'thin': 300,
+      'normal': 400,
+      'more': 500
+    },
     colors: {
       very_dark_blue: 'hsl(226, 43%, 10%)',
       dark_blue: 'hsl(235, 46%, 20%)',
