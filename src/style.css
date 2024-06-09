@@ -5,7 +5,7 @@
 /* SectionContainer */
 
 main {
-    
+
 }
 
 .SectionContainer {
@@ -36,10 +36,44 @@ main {
 
 /* TimeStat */
 
-.TimeStat {}
+.TimeStat h3 {
+    @apply flex items-center justify-between;
+}
 
 .TimeStatHeading {}
 
 .TimeStatHeadingSpan {}
 
-.WorkWithUtility {}
+.WorkWithUtility {
+    @apply flex items-center justify-between;
+}
+
+/* Stat */
+
+.Stat {
+
+}
+
+.Work {
+    @apply bg-primary-work;
+}
+
+.Play {
+    @apply bg-primary-play;
+}
+
+.Study {
+    @apply bg-primary-study;
+}
+
+.Exercise {
+    @apply bg-primary-exercise;
+}
+
+.Social {
+    @apply bg-primary-social;
+}
+
+.Self-Care {
+    @apply bg-primary-selfcare;
+}
