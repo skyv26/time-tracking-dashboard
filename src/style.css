@@ -21,7 +21,7 @@ main {
 /* UserStatSwitch */
 
 .UserAvatar {
-    @apply inline-block size-[54px] rounded-full;
+    @apply inline-block size-[54px] rounded-full border-[3px] border-[#fff];
 }
 
 .ReportFor {
@@ -37,7 +37,7 @@ main {
 }
 
 .UserInfoGroup {
-    @apply flex items-center gap-3 p-5 bg-primary-blue rounded-b-xl;
+    @apply flex items-center gap-3 p-5 py-7 bg-primary-blue rounded-b-xl;
 }
 
 /* TimeStat */
@@ -50,12 +50,16 @@ main {
     @apply font-thin;
 }
 
-.TimeStatHeading {}
+.TimeStatHeading {
+    @apply text-[#fff] !font-thin text-3xl;
+}
 
-.TimeStatHeadingSpan {}
+.TimeStatHeadingSpan {
+    @apply text-desaturated_blue !font-normal text-xs;
+}
 
 .WorkWithUtility {
-    @apply flex items-center justify-between text-lg font-more;
+    @apply flex items-center justify-between text-sm font-more text-[#fff];
 }
 
 /* Stat */
