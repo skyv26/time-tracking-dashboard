@@ -4,7 +4,7 @@ import Stat from './components/Stat/Stat';
 import { Activity } from './types/interfaces';
 
 let data: null | Activity[] = null;
-let statType = 'Daily';
+let statType = 'Weekly';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -37,6 +37,7 @@ function initializeUI() {
 
     const StatContainer = document.createElement('div') as HTMLDivElement;
 
+    StatContainer.className = 'StatContainer';
     // Safely use the data variable here
     data!.forEach((element) => {
         StatContainer.insertAdjacentElement('beforeend', Stat({
@@ -54,10 +55,16 @@ function initializeUI() {
     // Add event listener after DOM is fully updated
     const ButtonContainer = document.querySelector('.ButtonContainer');
     if (ButtonContainer) {
+
         ButtonContainer.addEventListener('click', (e: any) => {
             const target = e.target as HTMLElement;
+            if(target.nodeName === 'DIV') return;
             if (target && target.textContent) {
+                for (const btn of ButtonContainer.children) {
+                    btn.classList.remove('active');
+                }
                 statType = target.textContent;
+                target.classList.add('active')
                 initializeUI();
             }
         });
