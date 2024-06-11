@@ -21,11 +21,11 @@ main {
 /* UserStatSwitch */
 
 .UserAvatar {
-    @apply inline-block size-12 rounded-full;
+    @apply inline-block size-[54px] rounded-full;
 }
 
 .ReportFor {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col;
 }
 
 .StatSwitch {
@@ -37,7 +37,7 @@ main {
 }
 
 .UserInfoGroup {
-    @apply flex gap-2;
+    @apply flex items-center gap-3 p-5 bg-primary-blue rounded-b-xl;
 }
 
 /* TimeStat */
@@ -61,7 +61,7 @@ main {
 /* Stat */
 
 .Stat {
-    @apply rounded-xl rounded-b-2xl pt-8;
+    @apply rounded-xl rounded-b-[13.5px] pt-8;
 }
 
 .StatInnerContainer {
@@ -95,5 +95,5 @@ main {
 /* StatControlContainer */
 
 .StatControlContainer {
-    @apply bg-dark_blue;
+    @apply bg-dark_blue rounded-xl overflow-hidden;
 }
