@@ -19,25 +19,28 @@ main {
 }
 
 .SectionContainer {
-    @apply grid gap-5 h-screen py-16 place-content-center min-[540px]:gap-8;
+    @apply grid gap-5 h-screen grid-cols-1 py-16 place-content-center min-[540px]:gap-8 xl:grid-cols-[1fr_3fr];
 }
 
 /* UserStatSwitch */
+.UserInfoGroup {
+    @apply flex items-center gap-3 p-5 py-7 bg-primary-blue rounded-xl xl:flex-col xl:items-start xl:gap-8 xl:pb-24;
+}
 
 .UserAvatar {
-    @apply inline-block size-[54px] rounded-full border-[3px] border-[#fff];
+    @apply inline-block size-[54px] rounded-full border-[3px] border-[#fff] xl:size-20;
 }
 
 .ReportFor {
-    @apply flex flex-col font-normal text-[#fff] text-sm;
+    @apply flex flex-col font-thin text-[#fff] text-sm xl:text-5xl;
 }
 
 .ReportFor span {
-    @apply text-pale_blue text-sm;
+    @apply text-pale_blue font-normal text-sm;
 }
 
 .StatSwitch {
-    @apply block text-center w-full text-desaturated_blue text-sm hover:cursor-pointer;
+    @apply block text-center w-full text-desaturated_blue text-sm hover:cursor-pointer xl:max-w-max xl:self-start;
 }
 
 .StatSwitch.active {
@@ -45,11 +48,7 @@ main {
 }
 
 .ButtonContainer {
-    @apply flex items-center justify-between py-4 px-2;
-}
-
-.UserInfoGroup {
-    @apply flex items-center gap-3 p-5 py-7 bg-primary-blue rounded-b-xl;
+    @apply flex items-center justify-between py-4 px-2 xl:flex-col xl:px-5 xl:gap-4;
 }
 
 /* TimeStat */
@@ -81,11 +80,11 @@ main {
 }
 
 .Stat {
-    @apply rounded-xl rounded-b-[13.5px] pt-8;
+    @apply flex rounded-xl rounded-b-[13.5px] pt-8 xl:justify-end;
 }
 
 .StatInnerContainer {
-    @apply flex flex-col bg-dark_blue rounded-xl py-6 px-4 min-[540px]:gap-4 min-[540px]:p-7;
+    @apply flex w-full flex-col bg-dark_blue rounded-xl py-6 px-4 min-[540px]:gap-4 min-[540px]:p-7;
 }
 
 .Work {
@@ -115,5 +114,5 @@ main {
 /* StatControlContainer */
 
 .StatControlContainer {
-    @apply bg-dark_blue rounded-xl overflow-hidden;
+    @apply bg-dark_blue rounded-xl;
 }
