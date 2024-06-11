@@ -33,7 +33,7 @@ ButtonContainer.insertAdjacentElement('afterbegin', StatSwitch({
 
 ButtonContainer.insertAdjacentElement('beforeend', StatSwitch({
     buttonText: 'Weekly',
-    className: 'StatSwitch'
+    className: 'StatSwitch active'
 }));
 
 ButtonContainer.insertAdjacentElement('beforeend', StatSwitch({
