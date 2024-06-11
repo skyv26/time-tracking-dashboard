@@ -5,17 +5,21 @@
 /* SectionContainer */
 
 @layer base {
+
+    html {
+        min-height: 100%;
+    }
     body {
-        @apply font-rubik bg-very_dark_blue;
+        @apply font-rubik bg-very_dark_blue h-screen;
     }
 }
 
 main {
-    @apply p-5;    
+    @apply p-5 min-[540px]:px-28;    
 }
 
 .SectionContainer {
-
+    @apply grid gap-5 h-screen py-16 place-content-center min-[540px]:gap-8;
 }
 
 /* UserStatSwitch */
@@ -25,11 +29,19 @@ main {
 }
 
 .ReportFor {
-    @apply flex flex-col;
+    @apply flex flex-col font-normal text-[#fff] text-sm;
+}
+
+.ReportFor span {
+    @apply text-pale_blue text-sm;
 }
 
 .StatSwitch {
-    @apply block text-center w-full;
+    @apply block text-center w-full text-desaturated_blue text-sm hover:cursor-pointer;
+}
+
+.StatSwitch.active {
+    @apply text-[#fff];
 }
 
 .ButtonContainer {
@@ -43,7 +55,7 @@ main {
 /* TimeStat */
 
 .TimeStat h3 {
-    @apply flex items-center justify-between font-normal;
+    @apply flex items-center justify-between font-normal min-[540px]:flex-col min-[540px]:items-start min-[540px]:gap-2;
 }
 
 .TimeStat h3 span {
@@ -51,11 +63,11 @@ main {
 }
 
 .TimeStatHeading {
-    @apply text-[#fff] !font-thin text-3xl;
+    @apply text-[#fff] !font-thin text-3xl min-[540px]:text-5xl;
 }
 
 .TimeStatHeadingSpan {
-    @apply text-desaturated_blue !font-normal text-xs;
+    @apply text-desaturated_blue !font-normal text-xs min-[540px]:text-base;
 }
 
 .WorkWithUtility {
@@ -64,36 +76,40 @@ main {
 
 /* Stat */
 
+.StatContainer {
+    @apply grid grid-cols-1 min-[540px]:grid-cols-2 lg:grid-cols-3 gap-5 min-[540px]:gap-8;
+}
+
 .Stat {
     @apply rounded-xl rounded-b-[13.5px] pt-8;
 }
 
 .StatInnerContainer {
-    @apply flex flex-col bg-dark_blue rounded-xl py-6 px-4;
+    @apply flex flex-col bg-dark_blue rounded-xl py-6 px-4 min-[540px]:gap-4 min-[540px]:p-7;
 }
 
 .Work {
-    @apply bg-primary-work bg-[top_-0.7rem_right];
+    @apply bg-primary-work bg-[top_-0.65rem_right_1rem];
 }
 
 .Play {
-    @apply bg-primary-play bg-[top_-0.7rem_right];
+    @apply bg-primary-play bg-[top_-0.35rem_right_1rem];
 }
 
 .Study {
-    @apply bg-primary-study bg-[top_-0.7rem_right];
+    @apply bg-primary-study bg-[top_-0.4rem_right_1rem];
 }
 
 .Exercise {
-    @apply bg-primary-exercise bg-[top_-0.7rem_right];
+    @apply bg-primary-exercise bg-[top_-0rem_right_1rem];
 }
 
 .Social {
-    @apply bg-primary-social bg-[top_-0.7rem_right];
+    @apply bg-primary-social bg-[top_-0.8rem_right_1rem];
 }
 
 .Self-Care {
-    @apply bg-primary-selfcare bg-[top_-0.7rem_right];
+    @apply bg-primary-selfcare bg-[top_-0.8rem_right_1rem];
 }
 
 /* StatControlContainer */
