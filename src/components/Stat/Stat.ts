@@ -12,24 +12,29 @@ const Stat = ({ className, statData, statType }: {
     const self = document.createElement('article') as HTMLElement;
     self.style.backgroundImage = `url("${statData.icon}")`;
     self.style.backgroundRepeat = 'no-repeat';
-    self.style.backgroundPosition = 'top right';
+    self.style.backgroundSize = '4.25rem';
     self.className = `${className}`;
 
     const ellipses =  document.createElement('img') as HTMLImageElement;
     ellipses.src = ThreeDots;
     ellipses.alt = '';
 
-    self.insertAdjacentElement('beforeend', WorkWithUtility({
+    const StatInnerContainer = document.createElement('div') as HTMLDivElement;
+    StatInnerContainer.className = 'StatInnerContainer';
+
+    StatInnerContainer.insertAdjacentElement('beforeend', WorkWithUtility({
         cardText: statData.title,
         className: 'WorkWithUtility',
         secondChild: ellipses
     }));
 
-    self.insertAdjacentElement('beforeend', TimeStat({
+    StatInnerContainer.insertAdjacentElement('beforeend', TimeStat({
         className: 'TimeStat',
         currentTimeStat: `${timeframes.current}hrs`,
         previousTimeStat: `Last Week - ${timeframes.previous}hrs`
     }))
+
+    self.insertAdjacentElement('beforeend', StatInnerContainer);
     return self;
 }
 

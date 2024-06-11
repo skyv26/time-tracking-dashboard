@@ -44,6 +44,7 @@ ButtonContainer.insertAdjacentElement('beforeend', StatSwitch({
 
 const UserStatSwitch = () => {
     const StatControlContainer = document.createElement('article') as HTMLElement;
+    StatControlContainer.className = 'StatControlContainer';
     StatControlContainer.insertAdjacentElement('afterbegin', UserInfoGroup);
     StatControlContainer.insertAdjacentElement('beforeend', ButtonContainer);    
     return StatControlContainer;
