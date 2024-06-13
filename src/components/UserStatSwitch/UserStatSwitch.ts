@@ -18,7 +18,7 @@ UserInfoGroup.insertAdjacentElement('afterbegin', UserAvatar({
 }));
 
 UserInfoGroup.insertAdjacentElement('beforeend', ReportFrom({
-    userName: 'Aakash Verma',
+    userName: 'Jeremy Robson',
     className: 'ReportFor'
 }))
 
