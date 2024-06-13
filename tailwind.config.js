@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         rubik: ["Rubik", "serif"]
       },
+      backgroundImage: {
+        design: 'url("./src/assets/desktop-design.jpg")',
+        m_design: 'url("./src/assets/mobile-design.jpg")'
+      },
       backgroundColor: {
         primary: {
           blue: 'hsl(246, 80%, 60%)',
