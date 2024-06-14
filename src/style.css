@@ -10,38 +10,39 @@
         min-height: 100%;
     }
     body {
-        @apply font-rubik bg-very_dark_blue h-full !py-8 relative;
+        @apply font-rubik bg-very_dark_blue  !py-8 min-[1440px]:!py-[14.9rem] relative;
+        /* @apply min-h-screen grid place-content-center; */
     }
 
-    /* body::after {
-        @apply content-[''] bg-top bg-m_design bg-no-repeat absolute z-10 top-0 left-0 w-full h-full bg-blend-hue opacity-55;
-    } */
+    body::after {
+        @apply content-[''] bg-top bg-design bg-no-repeat absolute z-10 top-0 left-0 w-full h-full bg-blend-hue opacity-55;
+    }
 
 }
 
 main {
-    @apply p-5 min-[375px]:p-4 min-[540px]:px-28;    
+    @apply p-5 min-[375px]:p-4 min-[540px]:px-28 min-[1440px]:px-[10.25rem];    
 }
 
 .SectionContainer {
-    @apply grid gap-6 h-screen grid-cols-1 py-16 place-content-center min-[375px]:py-[43rem] min-[540px]:gap-8 xl:grid-cols-[1fr_3fr];
+    @apply grid gap-6 grid-cols-1 place-content-center  min-[540px]:gap-8 xl:grid-cols-[0.93fr_3fr];
 }
 
 /* UserStatSwitch */
 .UserInfoGroup {
-    @apply flex items-center gap-4 p-8 bg-primary-blue rounded-xl xl:flex-col xl:items-start xl:gap-8 xl:pb-24;
+    @apply flex items-center gap-4 p-8 bg-primary-blue rounded-xl xl:flex-col xl:items-start xl:gap-11 xl:pb-[4.7rem];
 }
 
 .UserAvatar {
-    @apply inline-block size-[54px] rounded-full border-[3px] border-[#fff] min-[375px]:size-[69px] xl:size-20;
+    @apply inline-block size-[54px] rounded-full border-[3px] border-[#fff] min-[375px]:size-[69px] xl:size-[5.2rem];
 }
 
 .ReportFor {
-    @apply flex flex-col gap-1 font-thin text-[#fff] text-[1.5rem] leading-none xl:text-5xl;
+    @apply flex flex-col font-thin text-[#fff] text-[1.5rem] leading-none xl:text-5xl min-[1440px]:text-[2.5rem] min-[1440px]:leading-tight;
 }
 
 .ReportFor span {
-    @apply text-pale_blue font-normal text-sm;
+    @apply text-pale_blue font-normal text-[15px];
 }
 
 .StatSwitch {
@@ -53,17 +54,17 @@ main {
 }
 
 .ButtonContainer {
-    @apply flex items-center justify-between py-4 min-[375px]:py-5 xl:flex-col xl:px-5 xl:gap-4;
+    @apply flex items-center justify-between py-4 min-[375px]:py-5 xl:flex-col xl:px-5 xl:gap-4 min-[1440px]:px-8;
 }
 
 /* TimeStat */
 
 .TimeStat h3 {
-    @apply flex items-center justify-between font-normal min-[375px]:text-[2rem] min-[540px]:flex-col min-[540px]:items-start min-[540px]:gap-2;
+    @apply flex items-center justify-between font-normal min-[375px]:text-[2rem] min-[540px]:flex-col min-[540px]:items-start min-[540px]:gap-2 min-[1440px]:text-6xl min-[1440px]:tracking-tighter;
 }
 
 .TimeStat h3 span {
-    @apply !font-more min-[375px]:text-[0.915rem];
+    @apply !font-more min-[375px]:text-[0.915rem] min-[1440px]:tracking-normal;
 }
 
 .TimeStatHeading {
@@ -85,11 +86,11 @@ main {
 }
 
 .Stat {
-    @apply flex rounded-xl rounded-b-[13.5px] pt-9 xl:justify-end;
+    @apply flex rounded-xl rounded-b-[13.5px] pt-11 xl:justify-end;
 }
 
 .StatInnerContainer {
-    @apply flex w-full flex-col bg-dark_blue rounded-xl py-6 px-4 min-[375px]:p-6 min-[375px]:gap-[0.85rem] min-[540px]:gap-4 min-[540px]:p-7;
+    @apply flex w-full flex-col bg-dark_blue rounded-xl py-6 px-4 min-[375px]:p-6 min-[375px]:gap-[0.85rem] min-[540px]:gap-4 min-[540px]:p-7 min-[1440px]:gap-[1.35rem];
 }
 
 .Work {
