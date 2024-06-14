@@ -18,6 +18,7 @@ const Stat = ({ className, statData, statType }: {
     const ellipses =  document.createElement('img') as HTMLImageElement;
     ellipses.src = ThreeDots;
     ellipses.alt = '';
+    ellipses.className = 'ThreeDots';
 
     const StatInnerContainer = document.createElement('div') as HTMLDivElement;
     StatInnerContainer.className = 'StatInnerContainer';
