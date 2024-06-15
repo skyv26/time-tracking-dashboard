@@ -15,7 +15,10 @@
 }
 
 main {
-    @apply p-5 min-[375px]:p-4 min-[540px]:px-28 xl:px-[10.25rem] relative;
+    @apply p-5 min-[375px]:p-4 min-[540px]:px-28 xl:px-[10.25rem] relative min-[1440px]:max-w-[1440px];
+    &:hover .UtilityWrapper {
+        @apply flex;
+    }
 }
 
 .SectionContainer {
@@ -36,7 +39,7 @@ main {
 }
 
 .ReportFor span {
-    @apply text-pale_blue font-normal text-[15px] dark:text-dark_blue;
+    @apply text-pale_blue font-normal text-[15px] dark:text-desaturated_blue;
 }
 
 .StatSwitch {
@@ -115,6 +118,24 @@ main {
     @apply bg-primary-selfcare dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] bg-contain;
 }
 
+.Snapchat {
+    @apply bg-[#f8c92e91] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+}
+
+.GitHub {
+    @apply bg-[#274299] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+}
+
+.Facebook {
+    @apply bg-[#6589ff] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+}
+
+.Instagram {
+    @apply bg-[#ff60bd] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+}
+
+
+
 /* StatControlContainer */
 
 .StatControlContainer {
@@ -128,13 +149,18 @@ main {
 }
 
 .theme-toggle img {
-    @apply inline-block size-8;
+    @apply inline-block size-5 min-[620px]:size-8;
 }
 
 .ChangeDetailIcon {
-    @apply size-8 cursor-pointer;
+    @apply size-6 min-[620px]:size-8 cursor-pointer;
 }
 
 .UtilityWrapper {
-    @apply absolute top-8 right-2 flex flex-col gap-2 items-center;
+    @apply lg:hidden absolute max-w-max right-2 top-2 min-[620px]:top-8 min-[620px]:right-2 flex min-[620px]:flex-col min-[620px]:gap-2 items-center;
+}
+
+
+.footer {
+    @apply absolute -bottom-5 w-full text-center left-0 text-[#fff] dark:text-very_dark_blue;
 }
