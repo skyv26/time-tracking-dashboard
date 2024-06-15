@@ -6,23 +6,22 @@ import AakashAvatar from './assets/aakash-dashboard-avatar.png';
 import JeremyAvatar from './assets/image-jeremy.png';
 import MoonIcon from './assets/moon.svg';
 import SunIcon from './assets/light.svg';
+import Footer from './components/Footer/Footer';
 
-import { Activity } from './types/interfaces';
+import {  Activity, RootData } from './types/interfaces';
 
-let data: null | Activity[] = null;
+let data: RootData | null = null;
 let statType = 'Weekly';
-let isAakashProfile = false; // Global state to track the profile
+let isAakashProfile = false;
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Fetch and assign data
         const response = await fetch('data.json');
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.statusText}`);
         }
-        data = (await response.json()) as Activity[];
+        data = (await response.json()) as RootData;
 
-        // Proceed only if data is successfully fetched
         if (data) {
             initializeUI();
         } else {
@@ -34,41 +33,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function initializeUI() {
-    document.querySelector('#app')!.textContent = null; // Clear the app container
-    
-    let isDarkMode = false;
-    
-    const main = document.createElement('main') as HTMLElement;
-    const section = document.createElement('section') as HTMLElement;
-    const toggleButton = document.createElement('button') as HTMLButtonElement;
-    const ChangeDetailIcon = document.createElement('img') as HTMLImageElement;
-    const ModeIcon = document.createElement('img') as HTMLImageElement;
-    ChangeDetailIcon.src = RetryIcon;
-    ChangeDetailIcon.className = 'ChangeDetailIcon';
-    ModeIcon.src = SunIcon;
-    ModeIcon.className = 'LightModeIcon';
-    // Handle profile toggle
-    ChangeDetailIcon.addEventListener('click', () => {
-        isAakashProfile = !isAakashProfile; // Toggle the profile state
-        initializeUI(); // Reinitialize the UI to reflect changes
-    });
+    const app = document.querySelector('#app');
+    if (!app) {
+        console.error('#app container not found');
+        return;
+    }
+    app.textContent = ''; // Clear the app container
 
-    toggleButton.className = 'theme-toggle';
-    toggleButton.textContent = '';
-    toggleButton.insertAdjacentElement('afterbegin', ModeIcon);
-    const htmlElement = document.documentElement as HTMLElement;
-
-    toggleButton.addEventListener('click', () => {
-        isDarkMode = !isDarkMode;
-        htmlElement.classList.toggle('dark');
-        ModeIcon.src = isDarkMode ? MoonIcon : SunIcon;
-    });
-
-    const utilityWrapper = document.createElement('div') as HTMLDivElement;
-    utilityWrapper.className = 'UtilityWrapper';
-
-    utilityWrapper.insertAdjacentElement('beforeend', toggleButton);
-    utilityWrapper.insertAdjacentElement('beforeend', ChangeDetailIcon);
+    const main = document.createElement('main');
+    const section = document.createElement('div');
+    const toggleButton = createToggleButton();
+    const changeProfileButton = createChangeProfileButton();
 
     section.className = 'SectionContainer';
 
@@ -81,12 +56,13 @@ function initializeUI() {
         }) as HTMLElement
     );
 
-    const StatContainer = document.createElement('div') as HTMLDivElement;
+    const statContainer = document.createElement('div');
+    statContainer.className = 'StatContainer';
 
-    StatContainer.className = 'StatContainer';
-    // Safely use the data variable here
-    data!.forEach((element) => {
-        StatContainer.insertAdjacentElement(
+    // Safely fetch and render data based on profile
+    const currentUserData = isAakashProfile ? data?.aakash.data : data?.jeremy.data;
+    currentUserData?.forEach((element: Activity) => {
+        statContainer.insertAdjacentElement(
             'beforeend',
             Stat({
                 className: `Stat ${element.title.split(' ').join('-')}`,
@@ -96,28 +72,73 @@ function initializeUI() {
         );
     });
 
-    section.insertAdjacentElement('beforeend', StatContainer);
+    section.insertAdjacentElement('beforeend', statContainer);
     main.insertAdjacentElement('beforeend', section);
+    main.insertAdjacentHTML('beforeend', Footer());
 
-    document.querySelector('#app')?.insertAdjacentElement('afterbegin', main);
+    app.insertAdjacentElement('afterbegin', main);
+
+    // Insert utility buttons
+    const utilityWrapper = document.createElement('div');
+    utilityWrapper.className = 'UtilityWrapper';
+    utilityWrapper.append(toggleButton, changeProfileButton);
+
     document.querySelector('.UserInfoGroup')?.insertAdjacentElement('afterbegin', utilityWrapper);
 
-    // Add event listener after DOM is fully updated
-    const ButtonContainer = document.querySelector('.ButtonContainer');
-    if (ButtonContainer) {
-        ButtonContainer.addEventListener('click', (e: any) => {
-            const target = e.target as HTMLElement;
-            if (target.nodeName === 'DIV') return;
-            if (target && target.textContent) {
-                for (const btn of ButtonContainer.children) {
-                    btn.classList.remove('active');
-                }
-                statType = target.textContent;
-                target.classList.add('active');
-                initializeUI();
-            }
-        });
-    } else {
+    setupButtonContainerListeners();
+}
+
+function createToggleButton(): HTMLButtonElement {
+    const toggleButton = document.createElement('button');
+    const modeIcon = document.createElement('img');
+    let isDarkMode = false;
+
+    modeIcon.src = SunIcon;
+    modeIcon.className = 'LightModeIcon';
+    toggleButton.className = 'theme-toggle';
+    toggleButton.append(modeIcon);
+
+    toggleButton.addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        document.documentElement.classList.toggle('dark');
+        modeIcon.src = isDarkMode ? MoonIcon : SunIcon;
+    });
+
+    return toggleButton;
+}
+
+function createChangeProfileButton(): HTMLImageElement {
+    const changeProfileButton = document.createElement('img');
+    changeProfileButton.src = RetryIcon;
+    changeProfileButton.className = 'ChangeDetailIcon';
+
+    changeProfileButton.addEventListener('click', () => {
+        isAakashProfile = !isAakashProfile; // Toggle profile
+        initializeUI(); // Reinitialize UI
+    });
+
+    return changeProfileButton;
+}
+
+function setupButtonContainerListeners() {
+    const buttonContainer = document.querySelector('.ButtonContainer');
+    if (!buttonContainer) {
         console.error('ButtonContainer not found in the DOM.');
+        return;
     }
+
+    buttonContainer.addEventListener('click', (e: Event) => {
+        const target = e.target as HTMLElement;
+        if (target.nodeName === 'DIV') return;
+
+        const selectedText = target.textContent;
+        if (selectedText) {
+            Array.from(buttonContainer.children).forEach((btn) =>
+                btn.classList.remove('active')
+            );
+            statType = selectedText;
+            target.classList.add('active');
+            initializeUI();
+        }
+    });
 }
