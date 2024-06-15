@@ -1,26 +1,34 @@
 import UserAvatar from "./UserAvatar/UserAvatar";
 import ReportFrom from "./ReportFrom/ReportFrom";
 import StatSwitch from "./StatSwitch/StatSwitch";
-import AakashAvatar from "../../assets/aakash-dashboard-avatar.png";
-import JeremyAvatar from "../../assets/image-jeremy.png";
 
 import '../../style.css';
 
 
 // UserInfo Group
-const UserInfoGroup = document.createElement('div') as HTMLDivElement;
-UserInfoGroup.className = 'UserInfoGroup';
+const UserInfoGroup = ({
+    userName,
+    src
+}: {
+    userName: string;
+    src: string;
+}) => {
+    const self = document.createElement('div') as HTMLDivElement;
+    self.className = 'UserInfoGroup';
 
-UserInfoGroup.insertAdjacentElement('afterbegin', UserAvatar({
-    src: JeremyAvatar,
-    className: 'UserAvatar',
-    alt: ''
-}));
+    self.insertAdjacentElement('afterbegin', UserAvatar({
+        src,
+        className: 'UserAvatar',
+        alt: ''
+    }));
 
-UserInfoGroup.insertAdjacentElement('beforeend', ReportFrom({
-    userName: 'Jeremy Robson',
-    className: 'ReportFor'
-}))
+    self.insertAdjacentElement('beforeend', ReportFrom({
+        userName,
+        className: 'ReportFor'
+    }));
+    return self;
+};
+
 
 // Button Container
 const ButtonContainer = document.createElement('div') as HTMLDivElement;
@@ -42,11 +50,20 @@ ButtonContainer.insertAdjacentElement('beforeend', StatSwitch({
 }));
 
 
-const UserStatSwitch = () => {
+const UserStatSwitch = ({
+    userName,
+    src
+}: {
+    userName: string;
+    src: string;
+}) => {
     const StatControlContainer = document.createElement('article') as HTMLElement;
     StatControlContainer.className = 'StatControlContainer';
-    StatControlContainer.insertAdjacentElement('afterbegin', UserInfoGroup);
-    StatControlContainer.insertAdjacentElement('beforeend', ButtonContainer);    
+    StatControlContainer.insertAdjacentElement('afterbegin', UserInfoGroup({
+        userName,
+        src
+    }));
+    StatControlContainer.insertAdjacentElement('beforeend', ButtonContainer);
     return StatControlContainer;
 };
 
