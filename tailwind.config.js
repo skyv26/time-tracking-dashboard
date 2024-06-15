@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ["./src/**/*.{html,js,ts}",],
   theme: {
     extend: {
       fontFamily: {
         rubik: ["Rubik", "serif"]
-      },
-      backgroundImage: {
-        design: 'url("./src/assets/desktop-design.jpg")',
-        m_design: 'url("./src/assets/mobile-design.jpg")'
       },
       backgroundColor: {
         primary: {
