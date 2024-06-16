@@ -1,11 +1,11 @@
 import './style.css';
 import UserStatSwitch from './components/UserStatSwitch/UserStatSwitch';
 import Stat from './components/Stat/Stat';
-import RetryIcon from './assets/retry.svg';
-import AakashAvatar from './assets/aakash-dashboard-avatar.png';
-import JeremyAvatar from './assets/image-jeremy.png';
-import MoonIcon from './assets/moon.svg';
-import SunIcon from './assets/light.svg';
+import RetryIcon from '../public/assets/retry.svg';
+import AakashAvatar from '../public/assets/aakash-dashboard-avatar.png';
+import JeremyAvatar from '../public/assets/image-jeremy.png';
+import MoonIcon from '../public/assets/moon.svg';
+import SunIcon from '../public/assets/light.svg';
 import Footer from './components/Footer/Footer';
 
 import {  Activity, RootData } from './types/interfaces';

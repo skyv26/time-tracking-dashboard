@@ -1,7 +1,7 @@
 import WorkWithUtility from "./WorkWithUtility/WorkWithUtility";
 import TimeStat from "./TimeStat/TimeStat";
 import { Activity } from "../../types/interfaces";
-import ThreeDots from '../../assets/icon-ellipsis.svg';
+import ThreeDots from '../../../public/assets/icon-ellipsis.svg';
 
 const Stat = ({ className, statData, statType }: {
     className: string,

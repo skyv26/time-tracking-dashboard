@@ -43,7 +43,7 @@ main {
 }
 
 .StatSwitch {
-    @apply block text-center w-full text-desaturated_blue font-normal text-sm min-[375px]:text-lg hover:cursor-pointer xl:!text-left xl:self-start;
+    @apply block text-center w-full text-desaturated_blue font-normal text-sm min-[375px]:text-lg hover:cursor-pointer xl:!text-left xl:self-start hover:text-[#fff] dark:hover:text-very_dark_blue;
 }
 
 .StatSwitch.active {
@@ -69,7 +69,7 @@ main {
 }
 
 .TimeStatHeadingSpan {
-    @apply text-desaturated_blue !font-normal text-xs min-[540px]:text-base;
+    @apply text-pale_blue !font-normal text-xs min-[540px]:text-base;
 }
 
 .WorkWithUtility {
@@ -87,11 +87,11 @@ main {
 }
 
 .ThreeDots {
-    @apply dark:!mix-blend-difference;
+    @apply hover:cursor-pointer dark:!mix-blend-difference;
 }
 
 .StatInnerContainer {
-    @apply flex w-full flex-col bg-dark_blue dark:bg-[#FBFEFB] rounded-xl py-6 px-4 min-[375px]:p-6 min-[375px]:gap-[0.85rem] min-[540px]:gap-4 min-[540px]:p-7 xl:gap-[1.5rem] dark:shadow-lg;
+    @apply flex w-full flex-col bg-dark_blue hover:bg-desaturated_blue hover:cursor-pointer dark:bg-[#FBFEFB] rounded-xl py-6 px-4 min-[375px]:p-6 min-[375px]:gap-[0.85rem] min-[540px]:gap-4 min-[540px]:p-7 xl:gap-[1.5rem] dark:shadow-lg;
 }
 
 .Work {
@@ -119,19 +119,19 @@ main {
 }
 
 .Snapchat {
-    @apply bg-[#f8c92e91] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+    @apply bg-[#f8c92e91] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
 }
 
 .GitHub {
-    @apply bg-[#274299] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+    @apply bg-[#274299] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
 }
 
 .Facebook {
-    @apply bg-[#6589ff] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+    @apply bg-[#6589ff] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
 }
 
 .Instagram {
-    @apply bg-[#ff60bd] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] !bg-[length:3.8rem_3.8rem];
+    @apply bg-[#ff60bd] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
 }
 
 
