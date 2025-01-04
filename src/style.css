@@ -1,3 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* SectionContainer */
+
+@layer base {
+    body {
+        @apply font-rubik bg-very_dark_blue;
+    }
+}
+
+main {
+    @apply p-5;    
+}
+
+.SectionContainer {
+
+}
+
+/* UserStatSwitch */
+
+.UserAvatar {
+    @apply inline-block size-12 rounded-full;
+}
+
+.ReportFor {
+    @apply flex flex-col gap-2;
+}
+
+.StatSwitch {
+    @apply block text-center w-full;
+}
+
+.ButtonContainer {
+    @apply flex items-center justify-between py-4 px-2;
+}
+
+.UserInfoGroup {
+    @apply flex gap-2;
+}
+
+/* TimeStat */
+
+.TimeStat h3 {
+    @apply flex items-center justify-between font-normal;
+}
+
+.TimeStat h3 span {
+    @apply font-thin;
+}
+
+.TimeStatHeading {}
+
+.TimeStatHeadingSpan {}
+
+.WorkWithUtility {
+    @apply flex items-center justify-between text-lg font-more;
+}
+
+/* Stat */
+
+.Stat {
+    @apply rounded-xl rounded-b-2xl pt-8;
+}
+
+.StatInnerContainer {
+    @apply flex flex-col bg-dark_blue rounded-xl py-6 px-4;
+}
+
+.Work {
+    @apply bg-primary-work bg-[top_-0.7rem_right];
+}
+
+.Play {
+    @apply bg-primary-play bg-[top_-0.7rem_right];
+}
+
+.Study {
+    @apply bg-primary-study bg-[top_-0.7rem_right];
+}
+
+.Exercise {
+    @apply bg-primary-exercise bg-[top_-0.7rem_right];
+}
+
+.Social {
+    @apply bg-primary-social bg-[top_-0.7rem_right];
+}
+
+.Self-Care {
+    @apply bg-primary-selfcare bg-[top_-0.7rem_right];
+}
+
+/* StatControlContainer */
+
+.StatControlContainer {
+    @apply bg-dark_blue;
+}
