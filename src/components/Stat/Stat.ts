@@ -1,7 +1,7 @@
 import WorkWithUtility from "./WorkWithUtility/WorkWithUtility";
 import TimeStat from "./TimeStat/TimeStat";
 import { Activity } from "../../types/interfaces";
-import ThreeDots from '../../assets/icon-ellipsis.svg';
+import ThreeDots from '../../../public/assets/icon-ellipsis.svg';
 
 const Stat = ({ className, statData, statType }: {
     className: string,
@@ -18,6 +18,7 @@ const Stat = ({ className, statData, statType }: {
     const ellipses =  document.createElement('img') as HTMLImageElement;
     ellipses.src = ThreeDots;
     ellipses.alt = '';
+    ellipses.className = 'ThreeDots';
 
     const StatInnerContainer = document.createElement('div') as HTMLDivElement;
     StatInnerContainer.className = 'StatInnerContainer';

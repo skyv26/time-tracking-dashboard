@@ -5,95 +5,162 @@
 /* SectionContainer */
 
 @layer base {
+
+    html {
+        min-height: 100%;
+    }
     body {
-        @apply font-rubik bg-very_dark_blue;
+        @apply font-rubik bg-very_dark_blue dark:bg-[#F0F4EF] !py-8 relative min-h-screen flex justify-center items-center;
     }
 }
 
 main {
-    @apply p-5;    
+    @apply p-5 min-[375px]:p-4 min-[540px]:px-28 xl:px-[10.25rem] relative min-[1440px]:max-w-[1440px];
+    &:hover .UtilityWrapper {
+        @apply flex;
+    }
 }
 
 .SectionContainer {
-
+    @apply grid gap-6 grid-cols-1 place-content-center  min-[540px]:gap-8 xl:grid-cols-[0.925fr_3fr];
 }
 
 /* UserStatSwitch */
+.UserInfoGroup {
+    @apply relative flex items-center gap-4 px-7 py-[34px] bg-primary-blue dark:bg-[#fbfefb] rounded-xl xl:flex-col xl:items-start xl:gap-10 xl:pb-[4.8rem] dark:shadow-lg;
+}
 
 .UserAvatar {
-    @apply inline-block size-12 rounded-full;
+    @apply inline-block size-[54px] rounded-full dark:border-pale_blue border-[3px] border-[#fff] min-[375px]:size-[69px] xl:size-[5.3rem];
 }
 
 .ReportFor {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col px-1 font-thin text-[#fff] dark:text-very_dark_blue text-[1.5rem] leading-none xl:gap-1 xl:text-5xl xl:text-[2.5rem] xl:leading-[1.2];
+}
+
+.ReportFor span {
+    @apply text-pale_blue font-normal text-[15px] dark:text-desaturated_blue;
 }
 
 .StatSwitch {
-    @apply block text-center w-full;
+    @apply block text-center w-full text-desaturated_blue font-normal text-sm min-[375px]:text-lg hover:cursor-pointer xl:!text-left xl:self-start hover:text-[#fff] dark:hover:text-very_dark_blue;
+}
+
+.StatSwitch.active {
+    @apply text-[#fff] dark:text-very_dark_blue;
 }
 
 .ButtonContainer {
-    @apply flex items-center justify-between py-4 px-2;
-}
-
-.UserInfoGroup {
-    @apply flex gap-2;
+    @apply flex items-center justify-between py-4 min-[375px]:py-6 xl:flex-col xl:gap-[14px] xl:px-8;
 }
 
 /* TimeStat */
 
 .TimeStat h3 {
-    @apply flex items-center justify-between font-normal;
+    @apply flex items-center justify-between font-normal min-[375px]:text-[2rem] min-[540px]:flex-col min-[540px]:items-start min-[540px]:gap-2 xl:text-[58px] xl:tracking-tight;
 }
 
 .TimeStat h3 span {
-    @apply font-thin;
+    @apply !font-more min-[375px]:text-[0.915rem] xl:tracking-normal;
 }
 
-.TimeStatHeading {}
+.TimeStatHeading {
+    @apply text-[#fff] !font-thin text-3xl min-[540px]:text-5xl dark:text-dark_blue;
+}
 
-.TimeStatHeadingSpan {}
+.TimeStatHeadingSpan {
+    @apply text-pale_blue !font-normal text-xs min-[540px]:text-base;
+}
 
 .WorkWithUtility {
-    @apply flex items-center justify-between text-lg font-more;
+    @apply flex items-center justify-between text-sm font-more text-[#fff] dark:text-desaturated_blue min-[375px]:text-lg;
 }
 
 /* Stat */
 
+.StatContainer {
+    @apply grid grid-cols-1 min-[540px]:grid-cols-2 lg:grid-cols-3 gap-6 min-[540px]:gap-8;
+}
+
 .Stat {
-    @apply rounded-xl rounded-b-2xl pt-8;
+    @apply flex rounded-2xl rounded-b-[14.8px] pt-11 xl:justify-end dark:shadow-lg;
+}
+
+.ThreeDots {
+    @apply hover:cursor-pointer dark:!mix-blend-difference;
 }
 
 .StatInnerContainer {
-    @apply flex flex-col bg-dark_blue rounded-xl py-6 px-4;
+    @apply flex w-full flex-col bg-dark_blue hover:bg-desaturated_blue hover:cursor-pointer dark:bg-[#FBFEFB] rounded-xl py-6 px-4 min-[375px]:p-6 min-[375px]:gap-[0.85rem] min-[540px]:gap-4 min-[540px]:p-7 xl:gap-[1.5rem] dark:shadow-lg;
 }
 
 .Work {
-    @apply bg-primary-work bg-[top_-0.7rem_right];
+    @apply bg-primary-work dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.65rem_right_1rem] !bg-[length:5rem_5rem];
 }
 
 .Play {
-    @apply bg-primary-play bg-[top_-0.7rem_right];
+    @apply bg-primary-play dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.5rem_right_1.2rem] !bg-[length:4.8rem_4.8rem];
 }
 
 .Study {
-    @apply bg-primary-study bg-[top_-0.7rem_right];
+    @apply bg-primary-study dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.4rem_right_1rem] !bg-[length:5rem_5rem];
 }
 
 .Exercise {
-    @apply bg-primary-exercise bg-[top_-0.7rem_right];
+    @apply bg-primary-exercise dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.2rem_right_1rem] !bg-[length:auto_3.5rem];
 }
 
 .Social {
-    @apply bg-primary-social bg-[top_-0.7rem_right];
+    @apply bg-primary-social dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1rem];
 }
 
 .Self-Care {
-    @apply bg-primary-selfcare bg-[top_-0.7rem_right];
+    @apply bg-primary-selfcare dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-0.7rem_right_1.05rem] bg-contain;
 }
+
+.Snapchat {
+    @apply bg-[#f8c92e91] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
+}
+
+.GitHub {
+    @apply bg-[#274299] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
+}
+
+.Facebook {
+    @apply bg-[#6589ff] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
+}
+
+.Instagram {
+    @apply bg-[#ff60bd] dark:bg-blend-color-dodge dark:bg-[#dbdfdb] bg-[top_-1rem_right_1.05rem] !bg-[length:5rem_5rem];
+}
+
+
 
 /* StatControlContainer */
 
 .StatControlContainer {
-    @apply bg-dark_blue;
+    @apply bg-dark_blue dark:bg-[#dbdfdb] dark:bg-blend-color-dodge rounded-xl;
+}
+
+/* Toggle Button */
+
+.theme-toggle {
+    @apply  bg-desaturated_blue px-4 py-2 rounded-lg text-[#fff] bg-[#00000000] border-none;
+}
+
+.theme-toggle img {
+    @apply inline-block size-5 min-[620px]:size-8;
+}
+
+.ChangeDetailIcon {
+    @apply size-6 min-[620px]:size-8 cursor-pointer;
+}
+
+.UtilityWrapper {
+    @apply lg:hidden absolute max-w-max right-2 top-2 min-[620px]:top-8 min-[620px]:right-2 flex min-[620px]:flex-col min-[620px]:gap-2 items-center;
+}
+
+
+.footer {
+    @apply absolute -bottom-5 w-full text-center left-0 text-[#fff] dark:text-very_dark_blue;
 }

@@ -14,3 +14,12 @@ export interface Activity {
     timeframes: Timeframes;
     icon: string;
 }
+
+export interface UserData {
+    data: Activity[];
+}
+
+export interface RootData {
+    jeremy: UserData;
+    aakash: UserData;
+}
