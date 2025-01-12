@@ -17,7 +17,7 @@
             "previous": 128
           }
         },
-        "icon": "../src/assets/icon-work.svg"
+        "icon": "./assets/icon-work.svg"
       },
       {
         "title": "Play",
@@ -35,7 +35,7 @@
             "previous": 29
           }
         },
-        "icon": "../src/assets/icon-play.svg"
+        "icon": "./assets/icon-play.svg"
       },
       {
         "title": "Study",
@@ -53,7 +53,7 @@
             "previous": 19
           }
         },
-        "icon": "../src/assets/icon-study.svg"
+        "icon": "./assets/icon-study.svg"
       },
       {
         "title": "Exercise",
@@ -71,7 +71,7 @@
             "previous": 18
           }
         },
-        "icon": "../src/assets/icon-exercise.svg"
+        "icon": "./assets/icon-exercise.svg"
       },
       {
         "title": "Social",
@@ -89,7 +89,7 @@
             "previous": 23
           }
         },
-        "icon": "../src/assets/icon-social.svg"
+        "icon": "./assets/icon-social.svg"
       },
       {
         "title": "Self Care",
@@ -107,7 +107,7 @@
             "previous": 11
           }
         },
-        "icon": "../src/assets/icon-self-care.svg"
+        "icon": "./assets/icon-self-care.svg"
       }
     ]
   },
@@ -129,7 +129,7 @@
             "previous": 75
           }
         },
-        "icon": "../src/assets/icon-github.svg"
+        "icon": "./assets/icon-github.svg"
       },
       {
         "title": "Facebook",
@@ -147,7 +147,7 @@
             "previous": 40
           }
         },
-        "icon": "../src/assets/icon-facebook.svg"
+        "icon": "./assets/icon-facebook.svg"
       },
       {
         "title": "Instagram",
@@ -165,7 +165,7 @@
             "previous": 90
           }
         },
-        "icon": "../src/assets/icon-instagram.svg"
+        "icon": "./assets/icon-instagram.svg"
       },
       {
         "title": "Snapchat",
@@ -183,7 +183,7 @@
             "previous": 25
           }
         },
-        "icon": "../src/assets/icon-snapchat.svg"
+        "icon": "./assets/icon-snapchat.svg"
       }
     ]
   }
